@@ -102,9 +102,13 @@ view: order_items {
 measure: Total_sales {
   type: sum
   sql: ${sale_price} ;;
-  filters: [created_year: "2018"]
+  filters: [created_year: "2019"]
 
 }
+  measure: Total_saless {
+    type: sum
+    sql: ${sale_price} ;;
+    }
   measure: Avg_sales {
     type: average
     sql: ${sale_price} ;;
