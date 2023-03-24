@@ -76,7 +76,8 @@ view: order_items {
       week,
       month,
       quarter,
-      year
+      year,
+      day_of_month
     ]
     convert_tz: no
     datatype: date
@@ -110,6 +111,10 @@ measure: Total_sales {
   measure: count_id {
     type: count
     drill_fields: [detail*]
+  }
+  measure: Averagesales {
+    type: average
+    sql: ${sale_price} ;;
   }
   # ----- Sets of fields for drilling ------
   set: detail {
