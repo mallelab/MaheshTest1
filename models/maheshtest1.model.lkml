@@ -175,6 +175,7 @@ explore: inventory_items {
     relationship: many_to_one
   }
 
+
   join: distribution_centers {
     type: left_outer
     sql_on: ${products.distribution_center_id} = ${distribution_centers.id} ;;
@@ -185,6 +186,7 @@ explore: inventory_items {
 explore: kmeans_training {}
 
 explore: order_items {
+  sql_always_having: ${count} < 500 ;;
   join: users {
     type: left_outer
     sql_on: ${order_items.user_id} = ${users.id} ;;
