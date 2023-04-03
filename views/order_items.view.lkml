@@ -121,6 +121,12 @@ measure: Total_sales {
     type: average
     sql: ${sale_price} ;;
   }
+  measure: count_less_500 {
+    type: count_distinct
+    filters: [order_id: "<500"]
+    sql: ${order_id} ;;
+  }
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
