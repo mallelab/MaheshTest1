@@ -228,6 +228,12 @@ explore: transaction_detail {
   }
 }
 
-explore: users {}
+explore: users {
+  access_filter: {
+    field: users.state
+    user_attribute: mahvina
+
+  }
+}
 
 explore: keywords {}
