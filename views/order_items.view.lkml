@@ -102,13 +102,8 @@ view: order_items {
 measure: Total_sales {
   type: sum
   sql: ${sale_price} ;;
-  filters: [created_year: "2019"]
 
 }
-  measure: Total_saless {
-    type: sum
-    sql: ${sale_price} ;;
-    }
   measure: Avg_sales {
     type: average
     sql: ${sale_price} ;;
@@ -121,11 +116,7 @@ measure: Total_sales {
     type: average
     sql: ${sale_price} ;;
   }
-  measure: count_less_500 {
-    type: count_distinct
-    filters: [order_id: "<500"]
-    sql: ${order_id} ;;
-  }
+
 
   # ----- Sets of fields for drilling ------
   set: detail {
